@@ -1,9 +1,6 @@
 
 class Translator:
     
-    def __init__(self):
-        self.a = 1
-        
 # "quick brown fox jumps over lazy dog"
 # "hello world"
 
