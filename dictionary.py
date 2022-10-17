@@ -1,5 +1,8 @@
 
 class Translator:
+    
+    def __init__(self):
+        self.a = 1
 # "quick brown fox jumps over lazy dog"
 # "hello world"
 
@@ -22,4 +25,6 @@ class Translator:
                return (self.dictionary[key]) 
 
 
-    
+# if __name__ == "__main__":
+#     a = Translator()
+#     print(a.searchDictionary("hello"))
