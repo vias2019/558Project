@@ -1,7 +1,7 @@
 
 class Translator:
     
-# "quick brown fox jumps over lazy dog"
+# "quick brown fox jumped over lazy dog"
 # "hello world"
 
     dictionary = {
