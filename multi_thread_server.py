@@ -17,6 +17,9 @@ class ClientThread(Thread):
             print(f"Server received data: {data}")
             if not data:
                 break
+# You can uncomment the following two line to elongate the process and see the effect of multithreading
+#             for _ in range(50000000):
+#                 a = 2 ** 100
             self.conn.send(data) 
 
 # Multithreaded Python server : TCP Server Socket Program Stub
