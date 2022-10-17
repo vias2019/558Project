@@ -11,7 +11,7 @@ class Translator:
         "quick": "rapido",
         "brown": "marron",
         "fox": "zorro",
-        "jumped": "salto'",
+        "jumped": "saltó",
         "jump": "salto",
         "over": "sobre",
         "lazy": "perezosa",
