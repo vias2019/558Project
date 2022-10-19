@@ -29,8 +29,8 @@ class ClientThread(Thread):
                 #     a = 2 ** 100
                     t = (data.decode('ascii')).lower()
                     print(t)
-                    temp=self.translate(t)
-                    data=temp.encode('ascii')
+                    temp = self.translate(t)
+                    data = temp.encode('ascii')
                     self.conn.send(data) 
     
     # def translate (str):
