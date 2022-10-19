@@ -32,10 +32,6 @@ class ClientThread(Thread):
                     temp = self.translate(t)
                     data = temp.encode('ascii')
                     self.conn.send(data) 
-    
-    # def translate (str):
-    #     object = dictionary.Translator()
-    #     return(object.searchDictionary(str))
            
 
 # Multithreaded Python server : TCP Server Socket Program Stub
