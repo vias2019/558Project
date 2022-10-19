@@ -26,6 +26,6 @@ class Translator:
         else: return ("N/A")
 
 
-if __name__ == "__main__":
-    a = Translator()
-    print(a.searchDictionary("hello"))
+#if __name__ == "__main__":
+#    a = Translator()
+#    print(a.searchDictionary("hello"))
