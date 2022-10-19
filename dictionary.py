@@ -22,7 +22,6 @@ class Translator:
         for key  in self.dictionary:
             if str == key:
                 return (self.dictionary[key]) 
-
         else: return ("N/A")
 
 
