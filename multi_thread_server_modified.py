@@ -30,24 +30,24 @@ class ClientThread(Thread):
                 break
             print(f"Server received data: {data}")
             
-            opt = data.decode('ascii')
+            opt = data.decode('utf-8')
             if opt == '01':
                 data = conn.recv(1024)
                 print(f"Server received data: {data}")
-                word = data.decode('ascii')
+                word = data.decode('utf-8')
                 rep = self.translate(word)
-                reply = rep.encode('ascii')
+                reply = rep.encode('utf-8')
                 conn.send(reply)
             else:
                 with self.lock:
                     data = conn.recv(1024)
                     print(f"Server received data: {data}")
-                    wordEng = data.decode('ascii')
+                    wordEng = data.decode('utf-8')
                     data = conn.recv(1024)
                     print(f"Server received data: {data}")
-                    wordSpa = data.decode('ascii')
+                    wordSpa = data.decode('utf-8')
                     rep = self.add(wordEng, wordSpa)
-                    reply = rep.encode('ascii')
+                    reply = rep.encode('utf-8')
                     conn.send(reply)
 
 # Multithreaded Python server : TCP Server Socket Program Stub
