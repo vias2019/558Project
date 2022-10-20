@@ -2,6 +2,7 @@ import socket
 from threading import Thread 
 from threading import Lock
 import dictionary
+from datetime import datetime
 
 # Multithreaded Python server : TCP Server Socket Thread Pool
 class ClientThread(Thread): 
@@ -11,7 +12,7 @@ class ClientThread(Thread):
         self.ip = ip 
         self.port = port
         self.conn = conn
-        print(f"[+] New server socket thread started for ip:{ip} and port: {port}")
+        print(f"[+] New server socket thread started for ip:{ip} and port: {port}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
     
     def translate (self, str):
         object = dictionary.Translator()
@@ -28,12 +29,12 @@ class ClientThread(Thread):
             if not data:
                 print('Bye')
                 break
-            print(f"Server received data: {data}")
+            print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
             
             opt = data.decode('utf-8')
             if opt == '01':
                 data = conn.recv(1024)
-                print(f"Server received data: {data}")
+                print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
                 word = data.decode('utf-8')
                 rep = self.translate(word)
                 reply = rep.encode('utf-8')
@@ -41,10 +42,10 @@ class ClientThread(Thread):
             else:
                 with self.lock:
                     data = conn.recv(1024)
-                    print(f"Server received data: {data}")
+                    print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
                     wordEng = data.decode('utf-8')
                     data = conn.recv(1024)
-                    print(f"Server received data: {data}")
+                    print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
                     wordSpa = data.decode('utf-8')
                     rep = self.add(wordEng, wordSpa)
                     reply = rep.encode('utf-8')
