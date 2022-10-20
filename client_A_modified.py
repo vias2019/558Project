@@ -1,7 +1,7 @@
 #client A
 import socket 
 
-host = '' 
+host = 'localhost' 
 port = 65432
 BUFFER_SIZE = 1024
  
