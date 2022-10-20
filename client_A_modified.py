@@ -1,5 +1,6 @@
 #client A
 import socket 
+from datetime import datetime
 
 host = 'localhost' 
 port = 65432
@@ -15,14 +16,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             word = input('\nPlease enter the word to translate:')
             s.send(word.encode('utf-8'))
             data = s.recv(1024)  # receive from server
-            print('Received from the server :',str(data.decode('utf-8')))
+            print('Received from the server :',str(data.decode('utf-8')), '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
         else:
             wordEng = input('\nPlease enter the word in English:')
             s.send(wordEng.encode('utf-8'))
             wordSpa = input('\nPlease enter the word in Spanish:')
             s.send(wordSpa.encode('utf-8'))
             data = s.recv(1024)
-            print('Received from the server :',str(data.decode('utf-8')))
+            print('Received from the server :',str(data.decode('utf-8')), '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
         
         # ask the client whether he wants to continue
         ans = input('\nDo you want to continue(y/n) :')
