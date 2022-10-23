@@ -32,10 +32,11 @@ class ClientThread(Thread):
             print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
             
             opt = data.decode('utf-8')
-            #You can uncomment the following two line to elongate the process and see the effect of multithreading
-            # for _ in range(100000000):
-            #     a = 2 ** 100
+            
             if opt == '01':
+                #You can uncomment the following two line to elongate the process and see the effect of multithreading
+                # for _ in range(100000000):
+                #     a = 2 ** 100
                 data = conn.recv(1024)
                 print(f"Server received data: {data}", '--', datetime.now().strftime("%d-%m-%Y, %H:%M:%S"))
                 word = data.decode('utf-8')
