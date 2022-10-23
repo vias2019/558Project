@@ -24,9 +24,6 @@ class Translator:
                 return (self.dictionary[key]) 
         else: return ("N/A")
      
-    def addDictionary(self, strEng, strSpa): 
-        self.dictionary[strEng] = strSpa
-        return
 
 
 #if __name__ == "__main__":
